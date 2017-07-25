@@ -11,7 +11,7 @@ import UIKit
 
 public let STBTableViewIndexLayoutDidChange = NSNotification.Name.UIDeviceOrientationDidChange
 
-public protocol STBTableViewIndexDelegate: NSObjectProtocol {
+@objc public protocol STBTableViewIndexDelegate: NSObjectProtocol {
 	
 	func tableViewIndexChanged(_ index: Int, title: String)
 	
@@ -21,7 +21,7 @@ public protocol STBTableViewIndexDelegate: NSObjectProtocol {
 	
 }
 
-open class STBTableViewIndex: UIControl {
+@objc open class STBTableViewIndex: UIControl {
 	
 	open weak var delegate: STBTableViewIndexDelegate!
 	fileprivate var panGestureRecognizer: UIPanGestureRecognizer!
