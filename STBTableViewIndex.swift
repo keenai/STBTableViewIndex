@@ -185,6 +185,7 @@ public let STBTableViewIndexLayoutDidChange = NSNotification.Name.UIDeviceOrient
 			view.addSubview(label)
 			labels += [label]
 		}
+        setNeedsLayout()
 	}
 	
 	fileprivate func setNewIndex(point p: CGPoint) {
