@@ -19,6 +19,8 @@ public let STBTableViewIndexLayoutDidChange = NSNotification.Name.UIDeviceOrient
 	
 	func tableViewIndexBottomLayoutGuideLength() -> CGFloat
 	
+    func tableViewIndexWidth() -> CGFloat
+    
 }
 
 @objc open class STBTableViewIndex: UIControl {
@@ -55,7 +57,12 @@ public let STBTableViewIndexLayoutDidChange = NSNotification.Name.UIDeviceOrient
 		return autoHides
 	}
 	
-	fileprivate var width: CGFloat { return 16.0 }
+	fileprivate var width: CGFloat {
+        if let width = delegate?.tableViewIndexWidth() {
+            return width
+        }
+        return 16.0
+    }
 	fileprivate var horizontalPadding: CGFloat { return 5.0 }
 	fileprivate var verticalPadding: CGFloat { return 5.0 }
 	fileprivate var endPadding: CGFloat { return 3.0 }
