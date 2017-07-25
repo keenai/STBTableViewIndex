@@ -210,7 +210,7 @@ public let STBTableViewIndexLayoutDidChange = NSNotification.Name.UIDeviceOrient
 		}
 	}
 	
-	open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+	open override func touchesBegan(_ touches: Swift.Set<UITouch>, with event: UIEvent?) {
 		hapticFeedbackSetup()
 		let touch = touches.first
 		if let location = touch?.location(in: self) {
@@ -221,7 +221,7 @@ public let STBTableViewIndexLayoutDidChange = NSNotification.Name.UIDeviceOrient
 		}
 	}
 	
-	open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+	open override func touchesEnded(_ touches: Swift.Set<UITouch>, with event: UIEvent?) {
 		hapticFeedbackFinalize()
 		if canAutoHide {
 			visible = false
